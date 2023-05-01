@@ -9,6 +9,7 @@
   --white: #FFF;
   --black-00: #000;
   --black-1f: #1F1F1F;
+  --black-33: #333;
   --orange: #FF5C00;
 }
 
@@ -111,7 +112,14 @@ a {
 
   color: var(--white);
 
+  transition: .3s;
+
   margin-left: 32px;
+}
+
+.nav__anchor:hover {
+  color: var(--orange);
+  transform: translateY(3px)
 }
 
 .header__links {

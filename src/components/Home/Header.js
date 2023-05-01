@@ -14,7 +14,7 @@ function Header() {
                     <a href="#" className="nav__logo">
                         <img src={logo} alt="" className="header__img" />
                     </a>
-                    <a href="#" className="nav__anchor">О НАС</a>
+                    <a href="#about" className="nav__anchor">О НАС</a>
                     <a href="#" className="nav__anchor">КАТАЛОГ</a>
                 </nav>
                 <div className="header__links">
