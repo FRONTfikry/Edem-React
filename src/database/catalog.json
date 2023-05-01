@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "name": "First",
+        "price": 9999
+    },
+    {
+        "id": "2",
+        "name": "Second",
+        "price": 8999
+    },
+    {
+        "id": "3",
+        "name": "Third",
+        "price": 10999
+    }
+]

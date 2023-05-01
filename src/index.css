@@ -1,0 +1,133 @@
+@font-face {
+  font-family: 'Cuatra';
+  font-weight: 700;
+  
+  src: url("./assets/fonts/Cuatra-Bold.woff"), url("./assets/fonts/Cuatra-Bold.woff2");
+}
+
+:root {
+  --white: #FFF;
+  --black-00: #000;
+  --black-1f: #1F1F1F;
+  --orange: #FF5C00;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+  font-variant-numeric: lining-nums;
+
+  outline: none;
+
+  font-family: 'Montserrat', sans-serif
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+
+  background: var(--black-00);
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+::-o-scrollbar {
+  width: 0;
+}
+::-moz-scrollbar {
+  width: 0;
+}
+::-ms-scrollbar {
+  width: 0;
+}
+
+.container {
+  max-width: 1170px;
+
+  margin: 0 auto;
+}
+
+.btn--action {
+  border-style: solid;
+  border-width: 3px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  font-style: normal;
+  font-weight: 900; 
+  font-size: 24px;
+  line-height: 29px;
+
+  -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
+}
+
+.header {
+  width: 100%;
+  height: 96px;
+
+  position: fixed;
+
+  background: rgb(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(40px);
+}
+
+.header__container {
+  height: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo {
+  transition: .3s;
+}
+
+.nav__anchor {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: var(--white);
+
+  margin-left: 32px;
+}
+
+.header__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__link {
+  transition: .3s;
+}
+
+.header__link:hover, .nav__logo:hover {
+  transform: translateY(-3px);
+}
+/* only-of-type */
+.header__link:not(:only-child):last-child {
+  margin-left: 32px;
+}

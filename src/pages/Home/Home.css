@@ -1,0 +1,67 @@
+/** Hero */
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+
+    background: #000;
+    background-image: url(../../assets/pictures/hero-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero__container {
+    width: inherit;
+    height: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero__intro {
+
+}
+
+.hero__title {
+    font-family: 'Cuatra';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 144px;
+    line-height: 174px;
+
+
+    color: var(--white);
+    
+    margin-bottom: 32px;
+}
+
+.hero__slogan {
+    font-style: normal;
+    font-weight: 700;    
+    font-size: 48px;
+    line-height: 59px;
+
+    color: #FFFFFF;
+
+    margin-bottom: 64px;
+}
+
+.hero__btn {
+    display: inline-block;
+
+    border-radius: 10px;
+    border-color: var(--orange);
+
+    color: var(--orange);
+
+    padding: 24px 56px;
+}
+
+.hero__btn:hover {
+    box-shadow: 0 0 40px 40px var(--orange) inset;
+    background-color: var(--orange);
+
+    color: var(--white);
+}
