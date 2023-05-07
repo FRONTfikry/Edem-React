@@ -7,9 +7,14 @@
 
 :root {
   --white: #FFF;
+
   --black-00: #000;
   --black-1f: #1F1F1F;
   --black-33: #333;
+  --black-50: #505050;
+
+  --gray-96: #969696;
+
   --orange: #FF5C00;
 }
 
@@ -63,14 +68,11 @@ a {
   border-style: solid;
   border-width: 3px;
 
+  background: transparent;
+
   outline: none;
 
   cursor: pointer;
-
-  font-style: normal;
-  font-weight: 900; 
-  font-size: 24px;
-  line-height: 29px;
 
   -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
@@ -138,4 +140,123 @@ a {
 /* only-of-type */
 .header__link:not(:only-child):last-child {
   margin-left: 32px;
+}
+
+
+
+/* CatalogItem */
+
+.catalog__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: var(--white);
+
+  padding: 32px;
+}
+
+.catalog__img {
+  margin-bottom: 16px;
+}
+
+.catalog__price { 
+  width: 100%;
+
+  display: flex;
+
+  margin-bottom: 8px;
+}
+
+.price__new {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+
+
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  color: var(--black-00);
+}
+
+.price__old {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-decoration-line: line-through;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  color: var(--gray-96);
+
+  margin-left: 8px;
+}
+
+.catalog__name {
+  width: 100%;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  color: var(--black-00);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  margin-bottom: 24px;
+}
+
+.catalog__count-action {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  border: 3px solid var(--orange);
+  border-radius: 10px 10px 5px 5px;
+
+  padding: 12px 16px;
+
+  margin-bottom: 4px;
+}
+
+.amount-count__btn {
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+}
+
+.amount-count__p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  color: var(--orange);
+}
+
+.catalog__btn {
+  width: 100%;
+
+  padding: 12px 0;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  border-radius: 5px 5px 10px 10px;
+  border-color: var(--orange);
+
+  color: var(--orange);
 }
