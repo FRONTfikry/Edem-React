@@ -19,7 +19,6 @@ function Catalog() {
                 <div className="catalog-preview__list">
                     {
                         catalog.slice(0, 3).map((item) => {
-                            console.log(activeUser?.cart);
                             let itemAmount = activeUser?.cart?.find((element) => element.id === item.id)?.amount || 0
 
                             return <CatalogItem id={item.id} name={item.name} priceNew={item.priceNew} priceOld={item.priceOld} amount={itemAmount} key={item.id}/>

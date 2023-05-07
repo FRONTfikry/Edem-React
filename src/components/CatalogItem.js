@@ -22,13 +22,10 @@ function CatalogItem({id, name, priceNew, priceOld, amount}) {
         if(activeUser === null) {
             navigate('/auth')
             return
-    
         }  
 
-        // ? If mode is true, then add to cart, else remove from cart
-        let mode = amount === 0 && count > 0
-
-        if(mode) {
+        // ? If true, then add to cart, else remove from cart
+        if(amount === 0 && count > 0) {
             setActiveUser(user => {
                 return {cart: [...user.cart, {id: id, amount: count}]}
             })

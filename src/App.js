@@ -1,5 +1,5 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 import ActiveUserContext from "./contexts/ActiveUserContext";
 import UsersContext from "./contexts/UsersContext";
@@ -12,17 +12,8 @@ import useLocalStorage from "./hooks/useLocalStorage";
 
 
 function App() {
-  let [activeUser, setActiveUser] = useLocalStorage('activeUser', {
-    cart: [
-      {
-        id: "1",
-        // name: "Dambulini",
-        // priceNew: 9999,
-        // priceOld: 10999,
-        amount: 3
-      },
-    ]
-  });
+  // ? activeUser default state is {cart: []}, because auth implementation is not ready
+  let [activeUser, setActiveUser] = useLocalStorage('activeUser', {cart: []});
 
   let [users, setUsers] = useLocalStorage('users', [])
 

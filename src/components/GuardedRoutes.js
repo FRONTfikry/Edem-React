@@ -5,7 +5,6 @@ import { Outlet, Navigate } from 'react-router-dom';
 import ActiveUserContext from '../contexts/ActiveUserContext';
 
 function GuardedRoutes() {
-
     let [activeUser] = useContext(ActiveUserContext)
 
     return (

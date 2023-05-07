@@ -11,7 +11,6 @@ function AboutItem({text}) {
     );
 }
 
-
 function About() {
     return (
         <section className="about" id="about">
