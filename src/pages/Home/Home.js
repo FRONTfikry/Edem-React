@@ -6,6 +6,8 @@ import Hero from '../../components/Home/Hero';
 import About from '../../components/Home/About';
 import Catalog from '../../components/Home/Catalog';
 
+import Footer from '../../components/Home/Footer';
+
 import './Home.css'
 
 function Home() {
@@ -18,6 +20,7 @@ function Home() {
                 <About />
                 <Catalog />
             </main>
+            <Footer />
         </>
     );
 }
