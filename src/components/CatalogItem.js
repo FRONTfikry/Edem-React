@@ -27,11 +27,11 @@ function CatalogItem({id, name, priceNew, priceOld, amount}) {
         // ? If true, then add to cart, else remove from cart
         if(amount === 0 && count > 0) {
             setActiveUser(user => {
-                return {cart: [...user.cart, {id: id, amount: count}]}
+                return {...user, cart: [...user.cart, {id: id, amount: count}]}
             })
         } else {
             setActiveUser(user => {
-                return {cart: user.cart.filter((element) => element.id !== id)}
+                return {...user, cart: user.cart.filter((element) => element.id !== id)}
             })
         }
     }

@@ -1,0 +1,163 @@
+.auth {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.auth__inner {
+    display: inline-block;
+    width: 640px;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    background: var(--black-50);
+}
+
+.auth__menu {
+    display: flex;
+    width: 100%;
+}
+
+.auth__item {
+    width: 50%;
+}
+
+.auth__input {
+    display: none;
+}
+
+
+.auth__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;    
+
+    cursor: pointer;
+
+    background: var(--black-33);
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 35px;
+
+    color: var(--white);
+
+    padding: 32px 0;
+
+    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
+}
+
+.auth__label:hover {
+    box-shadow: 0 0 40px 40px var(--orange) inset;
+    background: var(--orange);
+}
+
+.auth__input:checked + .auth__label {
+    box-shadow: 0 0 40px 40px var(--orange) inset;
+    background: var(--orange);
+}
+
+
+
+.auth__form {
+    padding: 32px;
+}
+
+.form__area {
+    display: flex;
+
+    width: 100%;
+
+    margin-bottom: 24px;
+}
+
+.form__area:last-child {
+    margin-bottom: 0;
+}
+
+.area__symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--black-1f);
+    border-radius: 16px 0px 0px 16px;
+
+    padding: 12px 40px;
+}
+
+.area__input {
+    flex-grow: 1;
+
+    background: var(--gray-CD);
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: var(--gray-96);
+
+    border: none;
+    border-radius: 0px 16px 16px 0px;
+
+    outline: none;
+
+    padding-left: 24px;
+}
+
+
+.area__btn {
+    padding: 0 12px;
+
+    border: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    margin-left: 16px;
+}
+
+.form__action-block {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 32px;
+}
+
+.form__anchor, .form__btn {
+    padding: 12px 0;
+
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+
+
+    flex-grow: 1;
+}
+
+.form__anchor {
+    display: block;
+    text-align: center;
+
+    border-color: var(--black-1f);
+    color: var(--black-1f);
+}
+
+.form__btn {
+
+}

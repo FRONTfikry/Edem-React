@@ -5,6 +5,7 @@ import ActiveUserContext from "./contexts/ActiveUserContext";
 import UsersContext from "./contexts/UsersContext";
 
 import Home from './pages/Home/Home';
+import Auth from './pages/Auth/Auth'
 
 import GuardedRoutes from "./components/GuardedRoutes";
 
@@ -12,8 +13,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 
 
 function App() {
-  // ? activeUser default state is {cart: []}, because auth implementation is not ready
-  let [activeUser, setActiveUser] = useLocalStorage('activeUser', {cart: []});
+  let [activeUser, setActiveUser] = useLocalStorage('activeUser', null);
 
   let [users, setUsers] = useLocalStorage('users', [])
 
@@ -23,7 +23,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home/>} />
-                    <Route path="/auth" element={<h1>Hello</h1>}/>
+                    <Route path="/auth" element={<Auth/>}/>
 
                     {/* Guarded Routes */}
                     <Route element={<GuardedRoutes/>}>
