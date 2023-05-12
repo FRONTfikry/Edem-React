@@ -158,6 +158,21 @@
     color: var(--black-1f);
 }
 
-.form__btn {
+.form__anchor:hover {
+    box-shadow: 0 0 40px 40px var(--black-1f) inset;
+    background: var(--black-1f);
 
+    color: var(--white);
+}
+
+.form__btn {
+    border-color: var(--orange);
+    color: var(--orange)
+}
+
+.form__btn:hover {
+    box-shadow: 0 0 40px 40px var(--orange) inset;
+    background: var(--orange);
+
+    color: var(--white)
 }
