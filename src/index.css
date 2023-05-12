@@ -261,3 +261,96 @@ a {
 
   color: var(--orange);
 }
+
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  transition: .3s;
+
+  pointer-events: none;
+
+  opacity: 0;
+}
+
+.modal--active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.modal__content {
+  background: var(--black-1f);
+
+  border-radius: 15px;
+  overflow: hidden;
+
+  transition: .3s;
+
+  transform: scale(0);
+}
+
+.modal__content--active {
+  transform: scale(1);
+}
+
+.modal__header {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--orange);
+
+  padding: 16px 24px;
+}
+
+.modal__title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: var(--white);
+}
+
+.modal__btn {
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  background: transparent;
+
+  padding: 8px;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 24px;
+} 
+
+.modal__p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: var(--white);
+
+  margin-bottom: 24px;
+}
