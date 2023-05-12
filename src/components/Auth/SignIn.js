@@ -8,10 +8,10 @@ import ActiveUserContext from '../../contexts/ActiveUserContext';
 import FormAreaText from './FormAreaText';
 import FormAreaPassword from './FormAreaPassword';
 
-function SignIn() {
+function SignIn({setModalVisible, setModalData}) {
 
-    let [users, setUsers] = useContext(UsersContext)
-    let [activeUser, setActiveUser] = useContext(ActiveUserContext)
+    let [users] = useContext(UsersContext)
+    let [, setActiveUser] = useContext(ActiveUserContext)
 
     function submitHandler(e) {
         e.preventDefault()
@@ -19,13 +19,19 @@ function SignIn() {
         let login = e.target.elements.login.value
         let password = e.target.elements.password.value
 
-        if(!login || !password) return
-
         let user = users.find((element) => element.login === login)
 
-        if(typeof user === 'undefined') return
+        if(!login || !password || typeof user === 'undefined' || user.password !== password) {
+            setModalData({title: "Ошибка!", text: "Логин или пароль были введены неверно!", ok: false})
+            setModalVisible(true)
+
+            return
+        }
 
         setActiveUser(user)
+
+        setModalData({title: "Успех!", text: "Вход осуществлен", ok: true})
+        setModalVisible(true)
     }
     return (    
         <form className="auth__form" onSubmit={submitHandler}>
