@@ -6,36 +6,35 @@
 }
 
 :root {
+  --orange: #FF5C00;
+
   --white: #FFF;
+
+  --gray-96: #969696;
+  --gray-CD: #CDCDCD;
 
   --black-00: #000;
   --black-1f: #1F1F1F;
   --black-33: #333;
   --black-50: #505050;
-
-  --gray-96: #969696;
-  --gray-CD: #CDCDCD;
-
-  --orange: #FF5C00;
 }
 
-
 * {
-  margin: 0;
-  padding: 0;
-
   box-sizing: border-box;
-
-  scroll-behavior: smooth;
-
-  font-variant-numeric: lining-nums;
 
   outline: none;
 
-  font-family: 'Montserrat', sans-serif
+  scroll-behavior: smooth;
+
+  font-family: 'Montserrat', sans-serif;
+  font-variant-numeric: lining-nums;
+
+  margin: 0;
+  padding: 0;
 }
 
-body, html {
+body, 
+html {
   width: 100%;
   height: 100%;
 
@@ -66,14 +65,14 @@ a {
 }
 
 .btn--action {
-  border-style: solid;
-  border-width: 3px;
-
   background: transparent;
 
   outline: none;
 
   cursor: pointer;
+
+  border-style: solid;
+  border-width: 3px;
 
   -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
@@ -122,6 +121,7 @@ a {
 
 .nav__anchor:hover {
   color: var(--orange);
+
   transform: translateY(3px)
 }
 
@@ -178,8 +178,6 @@ a {
   font-weight: 400;
   font-size: 36px;
   line-height: 44px;
-
-
   font-feature-settings: 'pnum' on, 'lnum' on;
 
   color: var(--black-00);
@@ -190,6 +188,7 @@ a {
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
+
   text-decoration-line: line-through;
   font-feature-settings: 'pnum' on, 'lnum' on;
 
@@ -205,6 +204,7 @@ a {
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
+
   font-feature-settings: 'pnum' on, 'lnum' on;
 
   color: var(--black-00);
@@ -226,19 +226,18 @@ a {
   border-radius: 10px 10px 5px 5px;
 
   padding: 12px 16px;
-
   margin-bottom: 4px;
 }
 
 .amount-count__btn {
   background: transparent;
 
-  transition: .3s;
-
   border: none;
   outline: none;
 
   cursor: pointer;
+
+  transition: .3s;
 }
 
 .amount-count__btn:hover {
@@ -250,6 +249,7 @@ a {
   font-weight: 600;
   font-size: 24px;
   line-height: 28px;
+
   font-feature-settings: 'pnum' on, 'lnum' on;
 
   color: var(--orange);
@@ -258,34 +258,36 @@ a {
 .catalog__btn {
   width: 100%;
 
-  padding: 12px 0;
-
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 28px;
+
   font-feature-settings: 'pnum' on, 'lnum' on;
 
   border-radius: 5px 5px 10px 10px;
   border-color: var(--orange);
 
   color: var(--orange);
+
+  padding: 12px 0;
 }
 
 .catalog__btn:hover {
-  box-shadow: 0 0 40px 40px var(--orange) inset;
   background: var(--orange);
+
+  box-shadow: 0 0 40px 40px var(--orange) inset;
 
   color: var(--white)
 }
 
 .modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-
   width: 100vw;
   height: 100vh;
+
+  position: absolute; 
+  top: 0;
+  left: 0;
 
   display: flex;
   align-items: center;
@@ -295,20 +297,22 @@ a {
 
   transition: .3s;
 
-  pointer-events: none;
-
   opacity: 0;
+
+  pointer-events: none;
 }
 
-.modal--active {
-  pointer-events: all;
+.modal--active {  
   opacity: 1;
+
+  pointer-events: all;
 }
 
 .modal__content {
   background: var(--black-1f);
 
   border-radius: 15px;
+
   overflow: hidden;
 
   transition: .3s;
@@ -342,12 +346,12 @@ a {
 }
 
 .modal__btn {
+  background: transparent;
+
   border: none;
   outline: none;
 
   cursor: pointer;
-
-  background: transparent;
 
   padding: 8px;
 }

@@ -10,39 +10,40 @@ import FormAreaPassword from './FormAreaPassword';
 
 function SignUp({setModalVisible, setModalData}) {
 
-    let [users, setUsers] = useContext(UsersContext)
+    let [users, setUsers] = useContext(UsersContext);
 
     function submitHandler(e) {
-        e.preventDefault()
+        e.preventDefault();
 
-        let login = e.target.elements.login.value
-        let primaryPassword = e.target.elements.password[0].value;
-        let checkPassword = e.target.elements.password[1].value;
+        let login = e.target.elements.login.value;
+        let password = e.target.elements.password[0].value;
+        let duplicatePassword = e.target.elements.password[1].value;
 
-        if(!login || !primaryPassword || !checkPassword) {
-            setModalData({title: "Ошибка!", text: "Заполните все поля!", ok: false})
-            setModalVisible(true)
+        if(!login || !password || !duplicatePassword) {
+            setModalData({title: "Ошибка!", text: "Заполните все поля!", ok: false});
+            setModalVisible(true);
 
-            return
+            return;
         }
-        if(primaryPassword !== checkPassword) {
-            setModalData({title: "Ошибка!", text: "Пароли не совпадают!", ok: false})
-            setModalVisible(true)
+        
+        if(password !== duplicatePassword) {
+            setModalData({title: "Ошибка!", text: "Пароли не совпадают!", ok: false});
+            setModalVisible(true);
 
-            return
+            return;
         }
 
         if(typeof users.find((element) => element.login === login) !== 'undefined') {
-            setModalData({title: "Ошибка!", text: "Пользователь с таким логином уже существует", ok: false})
-            setModalVisible(true)
+            setModalData({title: "Ошибка!", text: "Пользователь с таким логином уже существует", ok: false});
+            setModalVisible(true);
 
-            return
+            return;
         }
 
-        setUsers(users => [...users, {login: login, password: primaryPassword, cart: []}])
+        setUsers(users => [...users, {login: login, password: password, cart: []}]);
 
-        setModalData({title: "Успех!", text: "Регистрация прошла успешно!", ok: true})
-        setModalVisible(true)
+        setModalData({title: "Успех!", text: "Регистрация прошла успешно!", ok: true});
+        setModalVisible(true);
     }
 
     return (

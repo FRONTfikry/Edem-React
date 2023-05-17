@@ -31,7 +31,6 @@
     font-size: 144px;
     line-height: 174px;
 
-
     color: var(--white);
     
     margin-bottom: 32px;
@@ -183,8 +182,8 @@
 
 .catalog-preview__list {
     width: 100%;
-    display: grid;
 
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
 
     gap: 24px;
@@ -196,8 +195,6 @@
     width: 100%;
 
     display: inline-block;
-
-    padding: 12px 0;
 
     outline: none;
     border: none;
@@ -214,6 +211,8 @@
     transition: .3s;
 
     color: var(--white);
+
+    padding: 12px 0;
 }
 
 .catalog-preview__btn:hover {
@@ -240,6 +239,7 @@
 
 .footer__caption:hover .footer__name {
     color: var(--orange);
+
     transform: translateY(8px);
 }   
 
@@ -266,6 +266,7 @@
     font-weight: 400;   
     font-size: 24px;
     line-height: 29px;
+    
     font-feature-settings: 'pnum' on, 'lnum' on;
 
     color: var(--gray-96)

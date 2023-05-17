@@ -18,10 +18,10 @@ function Catalog() {
                 <h1 className="catalog-preview__title">КАТАЛОГ</h1> 
                 <div className="catalog-preview__list">
                     {
-                        catalog.slice(0, 3).map((item) => {
-                            let itemAmount = activeUser?.cart?.find((element) => element.id === item.id)?.amount || 0
+                        catalog.slice(0, 3).map(({id, name, priceNew, priceOld}) => {
+                            let itemAmount = activeUser?.cart?.find((element) => element.id === id)?.amount || 0;
 
-                            return <CatalogItem id={item.id} name={item.name} priceNew={item.priceNew} priceOld={item.priceOld} amount={itemAmount} key={item.id}/>
+                            return <CatalogItem id={id} name={name} priceNew={priceNew} priceOld={priceOld} amount={itemAmount} key={id}/>;
                         })
                     }
                 </div>

@@ -8,19 +8,22 @@
 }
 
 
-.auth__inner {
-    display: inline-block;
+.auth__inner {    
     width: 640px;
 
-    border-radius: 10px;
-    overflow: hidden;
+    display: inline-block;
 
     background: var(--black-50);
+
+    border-radius: 10px;
+
+    overflow: hidden;
 }
 
-.auth__menu {
-    display: flex;
+.auth__menu {    
     width: 100%;
+
+    display: flex;
 }
 
 .auth__item {
@@ -33,14 +36,12 @@
 
 
 .auth__label {
+    width: 100%;    
+
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 100%;    
-
-    cursor: pointer;
-
+    
     background: var(--black-33);
 
     font-style: normal;
@@ -50,20 +51,24 @@
 
     color: var(--white);
 
-    padding: 32px 0;
+    cursor: pointer;
 
     -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out, background-color 500ms;
+
+    padding: 32px 0;
 }
 
 .auth__label:hover {
-    box-shadow: 0 0 40px 40px var(--orange) inset;
     background: var(--orange);
+
+    box-shadow: 0 0 40px 40px var(--orange) inset;
 }
 
 .auth__input:checked + .auth__label {
-    box-shadow: 0 0 40px 40px var(--orange) inset;
     background: var(--orange);
+
+    box-shadow: 0 0 40px 40px var(--orange) inset;
 }
 
 
@@ -73,9 +78,9 @@
 }
 
 .form__area {
-    display: flex;
-
     width: 100%;
+
+    display: flex;
 
     margin-bottom: 24px;
 }
@@ -90,6 +95,7 @@
     justify-content: center;
 
     background: var(--black-1f);
+
     border-radius: 16px 0px 0px 16px;
 
     padding: 12px 40px;
@@ -117,8 +123,6 @@
 
 
 .area__btn {
-    padding: 0 12px;
-
     border: none;
     border-radius: 20px;
 
@@ -126,6 +130,7 @@
 
     outline: none;
 
+    padding: 0 12px;
     margin-left: 16px;
 }
 
@@ -137,7 +142,7 @@
 }
 
 .form__anchor, .form__btn {
-    padding: 12px 0;
+    flex-grow: 1;
 
     border-radius: 10px;
 
@@ -145,34 +150,38 @@
     font-weight: 900;
     font-size: 24px;
     line-height: 28px;
-
-
-    flex-grow: 1;
+    
+    padding: 12px 0;
 }
 
 .form__anchor {
     display: block;
-    text-align: center;
 
     border-color: var(--black-1f);
+
+    text-align: center;
+
     color: var(--black-1f);
 }
 
 .form__anchor:hover {
-    box-shadow: 0 0 40px 40px var(--black-1f) inset;
     background: var(--black-1f);
+
+    box-shadow: 0 0 40px 40px var(--black-1f) inset;
 
     color: var(--white);
 }
 
 .form__btn {
     border-color: var(--orange);
+
     color: var(--orange)
 }
 
 .form__btn:hover {
-    box-shadow: 0 0 40px 40px var(--orange) inset;
     background: var(--orange);
+    
+    box-shadow: 0 0 40px 40px var(--orange) inset;
 
     color: var(--white)
 }

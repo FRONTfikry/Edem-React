@@ -6,11 +6,11 @@ import seePassImg from '../../assets/icons/see-pass.svg';
 import seePassLineThroughImg from '../../assets/icons/see-pass-line-through.svg';
 
 function FormAreaPassword() {
-
+    
     let [visible, setVisible] = useState(false);
 
     function visibleHandler() {
-        setVisible(visible => !visible)
+        setVisible(visible => !visible);
     }
 
     return (

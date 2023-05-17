@@ -10,28 +10,28 @@ import FormAreaPassword from './FormAreaPassword';
 
 function SignIn({setModalVisible, setModalData}) {
 
-    let [users] = useContext(UsersContext)
-    let [, setActiveUser] = useContext(ActiveUserContext)
+    let [users] = useContext(UsersContext);
+    let [, setActiveUser] = useContext(ActiveUserContext);
 
     function submitHandler(e) {
-        e.preventDefault()
+        e.preventDefault();
         
-        let login = e.target.elements.login.value
-        let password = e.target.elements.password.value
+        let login = e.target.elements.login.value;
+        let password = e.target.elements.password.value;
 
-        let user = users.find((element) => element.login === login)
+        let user = users.find((element) => element.login === login);
 
         if(!login || !password || typeof user === 'undefined' || user.password !== password) {
-            setModalData({title: "Ошибка!", text: "Логин или пароль были введены неверно!", ok: false})
-            setModalVisible(true)
+            setModalData({title: "Ошибка!", text: "Логин или пароль были введены неверно!", ok: false});
+            setModalVisible(true);
 
-            return
+            return;
         }
 
-        setActiveUser(user)
+        setActiveUser(user);
 
-        setModalData({title: "Успех!", text: "Вход осуществлен", ok: true})
-        setModalVisible(true)
+        setModalData({title: "Успех!", text: "Вход осуществлен", ok: true});
+        setModalVisible(true);
     }
     return (    
         <form className="auth__form" onSubmit={submitHandler}>

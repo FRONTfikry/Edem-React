@@ -18,14 +18,14 @@ function AuthItem({id, text, defaultChecked}) {
 }
 
 function Auth() {
-    let [authMode, setAuthMode] = useState('signIn')
+    let [authMode, setAuthMode] = useState('signIn');
     
-    let [modalVisible, setModalVisible] = useState(false)
+    let [modalVisible, setModalVisible] = useState(false);
     
-    let [modalData, setModalData] = useState({title: "", text: "", ok: false})
+    let [modalData, setModalData] = useState({title: "", text: "", ok: false});
 
     function authModeHandler() {
-        setAuthMode(authMode => authMode === 'signIn' ? 'signUp' : 'signIn')
+        setAuthMode(authMode => authMode === 'signIn' ? 'signUp' : 'signIn');
     }
 
     return (

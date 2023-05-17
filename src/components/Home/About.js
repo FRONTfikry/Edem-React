@@ -2,15 +2,6 @@ import React from 'react';
 
 import checkImg from '../../assets/icons/check.svg'
 
-function AboutItem({text}) {
-    return (
-        <li className="about__item">
-            <img src={checkImg} alt="" className="about__img"/>
-            <span className="about__span">{text}</span>
-        </li>
-    );
-}
-
 function About() {
     return (
         <section className="about" id="about">
@@ -31,8 +22,16 @@ function About() {
                 </h1>
             </div>
         </section>
-    )
+    );
 }
 
+function AboutItem({text}) {
+    return (
+        <li className="about__item">
+            <img src={checkImg} alt="" className="about__img"/>
+            <span className="about__span">{text}</span>
+        </li>
+    );
+}
 
 export default About;

@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 import ActiveUserContext from '../contexts/ActiveUserContext';
 
 import CatalogItemImg from '../assets/pictures/catalog-item-img.png'
 import minusImg from '../assets/icons/minus.svg'
 import plusImg from '../assets/icons/plus.svg'
-
-import { useNavigate } from 'react-router-dom';
 
 
 function CatalogItem({id, name, priceNew, priceOld, amount}) {
@@ -20,21 +20,20 @@ function CatalogItem({id, name, priceNew, priceOld, amount}) {
 
     function submitHandler() {
         if(activeUser === null) {
-            navigate('/auth')
-            return
+            navigate('/auth');
+            return;
         }  
 
-        // ? If true, then add to cart, else remove from cart
-        if(amount === 0 && count > 0) {
-            setActiveUser(user => {
-                return {...user, cart: [...user.cart, {id: id, amount: count}]}
-            })
-        } else {
-            setActiveUser(user => {
-                return {...user, cart: user.cart.filter((element) => element.id !== id)}
-            })
-        }
+        // ? add to cart || remove from cart
+        let cart = (amount === 0 && count > 0)
+        ? [...activeUser.cart, {id: id, amount: count}]
+        : activeUser.cart.filter((element) => element.id !== id);
+
+        setActiveUser(user => {
+            return {...user, cart};
+        });
     }
+
 
     return (
         <div className="catalog__item">
