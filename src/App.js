@@ -5,7 +5,8 @@ import ActiveUserContext from "./contexts/ActiveUserContext";
 import UsersContext from "./contexts/UsersContext";
 
 import Home from './pages/Home/Home';
-import Auth from './pages/Auth/Auth'
+import Auth from './pages/Auth/Auth';
+import Catalog from './pages/Catalog/Catalog';
 
 import GuardedRoutes from "./components/GuardedRoutes";
 
@@ -24,6 +25,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>} />
                     <Route path="/auth" element={<Auth/>}/>
+                    <Route path="/catalog" element={<Catalog/>} />
 
                     {/* Guarded Routes */}
                     <Route element={<GuardedRoutes/>}>

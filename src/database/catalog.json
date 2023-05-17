@@ -14,6 +14,24 @@
     {
         "id": "3",
         "name": "Dbulletti",
+        "priceNew": 15999,
+        "priceOld": 12999
+    },
+    {
+        "id": "4",
+        "name": "Dambuletti",
+        "priceNew": 18999,
+        "priceOld": 12999
+    },
+    {
+        "id": "5",
+        "name": "Dbulini",
+        "priceNew": 20999,
+        "priceOld": 12999
+    },
+    {
+        "id": "6",
+        "name": "Bdateletti",
         "priceNew": 10999,
         "priceOld": 12999
     }
