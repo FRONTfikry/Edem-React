@@ -30,7 +30,7 @@ function CatalogItem({id, name, priceNew, priceOld, amount}) {
         : activeUser.cart.filter((element) => element.id !== id);
 
         setActiveUser(user => {
-            return {...user, cart};
+            return {...user, cart: cart};
         });
     }
 
