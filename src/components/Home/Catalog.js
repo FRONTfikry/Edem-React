@@ -6,10 +6,13 @@ import catalog from '../../database/catalog.json'
 
 import CatalogItem from '../CatalogItem';
 
-import ActiveUserContext from '../../contexts/ActiveUserContext'
+import ActiveUserContext from '../../contexts/ActiveUserContext';
+import UsersContext from '../../contexts/UsersContext';
 
 
 function Catalog() {
+    
+    let [users] = useContext(UsersContext);
     let [activeUser] = useContext(ActiveUserContext);
 
     return (
@@ -19,7 +22,7 @@ function Catalog() {
                 <div className="catalog-preview__list">
                     {
                         catalog.slice(0, 3).map(({id, name, priceNew, priceOld}) => {
-                            let itemAmount = activeUser?.cart?.find((element) => element.id === id)?.amount || 0;
+                            let itemAmount =  users[activeUser]?.cart?.find((element) => element.id === id)?.amount || 0;
 
                             return <CatalogItem id={id} name={name} priceNew={priceNew} priceOld={priceOld} amount={itemAmount} key={id}/>;
                         })

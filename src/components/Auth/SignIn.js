@@ -16,10 +16,10 @@ function SignIn({setModalVisible, setModalData}) {
     function submitHandler(e) {
         e.preventDefault();
         
-        let login = e.target.elements.login.value;
-        let password = e.target.elements.password.value;
+        let login = e.target.elements.login.value.trim();
+        let password = e.target.elements.password.value.trim();
 
-        let user = users.find((element) => element.login === login);
+        let user = users[login];
 
         if(!login || !password || typeof user === 'undefined' || user.password !== password) {
             setModalData({title: "Ошибка!", text: "Логин или пароль были введены неверно!", ok: false});
@@ -28,7 +28,7 @@ function SignIn({setModalVisible, setModalData}) {
             return;
         }
 
-        setActiveUser(user);
+        setActiveUser(login);
 
         setModalData({title: "Успех!", text: "Вход осуществлен", ok: true});
         setModalVisible(true);

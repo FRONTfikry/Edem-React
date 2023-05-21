@@ -7,6 +7,7 @@ import UsersContext from "./contexts/UsersContext";
 import Home from './pages/Home/Home';
 import Auth from './pages/Auth/Auth';
 import Catalog from './pages/Catalog/Catalog';
+import Profile from './pages/Profile/Profile';
 
 import GuardedRoutes from "./components/GuardedRoutes";
 
@@ -14,9 +15,9 @@ import useLocalStorage from "./hooks/useLocalStorage";
 
 
 function App() {
-  let [activeUser, setActiveUser] = useLocalStorage('activeUser', null);
 
-  let [users, setUsers] = useLocalStorage('users', [])
+  let [users, setUsers] = useLocalStorage('users', {})
+  let [activeUser, setActiveUser] = useLocalStorage('activeUser', null);
 
   return (
     <ActiveUserContext.Provider value={[activeUser, setActiveUser]}>
@@ -30,7 +31,7 @@ function App() {
                     {/* Guarded Routes */}
                     <Route element={<GuardedRoutes/>}>
                       <Route path="/cart" />
-                      <Route path="/profile" />
+                      <Route path="/profile" element={<Profile/>}/>
                     </Route>
 
                 </Routes>

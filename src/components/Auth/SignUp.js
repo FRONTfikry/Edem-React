@@ -15,10 +15,11 @@ function SignUp({setModalVisible, setModalData}) {
     function submitHandler(e) {
         e.preventDefault();
 
-        let login = e.target.elements.login.value;
-        let password = e.target.elements.password[0].value;
-        let duplicatePassword = e.target.elements.password[1].value;
+        let login = e.target.elements.login.value.trim();
+        let password = e.target.elements.password[0].value.trim();
+        let duplicatePassword = e.target.elements.password[1].value.trim();
 
+        
         if(!login || !password || !duplicatePassword) {
             setModalData({title: "Ошибка!", text: "Заполните все поля!", ok: false});
             setModalVisible(true);
@@ -33,14 +34,18 @@ function SignUp({setModalVisible, setModalData}) {
             return;
         }
 
-        if(typeof users.find((element) => element.login === login) !== 'undefined') {
+        if(typeof users[login] !== 'undefined') {
             setModalData({title: "Ошибка!", text: "Пользователь с таким логином уже существует", ok: false});
             setModalVisible(true);
 
             return;
         }
 
-        setUsers(users => [...users, {login: login, password: password, cart: []}]);
+        // setUsers(users => [...users, {login: login, password: password, balance: 0, cart: []}]);
+
+        setUsers(users => {
+            return {...users, [login]: {password: password, balance: 0, cart: []}}
+        })
 
         setModalData({title: "Успех!", text: "Регистрация прошла успешно!", ok: true});
         setModalVisible(true);

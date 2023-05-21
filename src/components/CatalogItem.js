@@ -3,14 +3,16 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ActiveUserContext from '../contexts/ActiveUserContext';
+import UsersContext from '../contexts/UsersContext';
 
-import CatalogItemImg from '../assets/pictures/catalog-item-img.png'
-import minusImg from '../assets/icons/minus.svg'
-import plusImg from '../assets/icons/plus.svg'
+import CatalogItemImg from '../assets/pictures/catalog-item-img.png';
+import minusImg from '../assets/icons/minus.svg';
+import plusImg from '../assets/icons/plus.svg';
 
 
 function CatalogItem({id, name, priceNew, priceOld, amount}) {
-
+    
+    let [users, setUsers] = useContext(UsersContext);
     let [activeUser, setActiveUser] = useContext(ActiveUserContext);
 
     let [count, setCount] = useState(1);
@@ -26,11 +28,11 @@ function CatalogItem({id, name, priceNew, priceOld, amount}) {
 
         // ? add to cart || remove from cart
         let cart = (amount === 0 && count > 0)
-        ? [...activeUser.cart, {id: id, amount: count}]
-        : activeUser.cart.filter((element) => element.id !== id);
+        ? [...users[activeUser].cart, {id: id, amount: count}]
+        : users[activeUser].cart.filter((element) => element.id !== id);
 
-        setActiveUser(user => {
-            return {...user, cart: cart};
+        setUsers(users => {
+            return {...users, [activeUser]: {...users[activeUser], cart: cart}};
         });
     }
 

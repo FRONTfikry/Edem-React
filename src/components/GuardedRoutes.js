@@ -8,7 +8,7 @@ function GuardedRoutes() {
     let [activeUser] = useContext(ActiveUserContext);
 
     return (
-        Object.is(activeUser, null) ? <Navigate to="/auth"/> : <Outlet/>
+        activeUser ? <Outlet/> : <Navigate to="/auth"/>
     );
 }
 
