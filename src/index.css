@@ -8,6 +8,8 @@
 :root {
   --orange: #FF5C00;
 
+  --red: #E32636;
+
   --white: #FFF;
 
   --gray-96: #969696;
@@ -15,6 +17,7 @@
 
   --black-00: #000;
   --black-1f: #1F1F1F;
+  --black-2f: #2F2F2F;
   --black-33: #333;
   --black-50: #505050;
 }

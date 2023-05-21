@@ -1,0 +1,154 @@
+.profile {
+    width: 100vw;
+    height: 100vh;
+
+    background: var(--black-1f);
+}
+
+.profile__container {
+    height: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile__content { 
+    display: flex;
+    align-items: flex-start;
+
+    gap: 24px;
+}
+
+.profile__aside {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.profile__img {
+    margin-bottom: 8px;
+}
+
+.profile__name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: var(--white);
+
+    margin-bottom: 16px;
+}
+
+.profile__balance {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: var(--white);
+}
+
+.profile__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: var(--orange);
+    
+    padding: 24px 0;
+}
+
+.profile__actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--black-2f);
+    
+    padding: 24px 48px;
+}
+
+.profile__btn {
+    flex-grow: 1;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    border-radius: 5px;
+
+    padding: 8px;
+    margin-left: 8px;
+}
+
+
+.quit-btn, .form-btn {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+
+.quit-btn {
+    margin-bottom: 16px;
+}
+
+.quit-btn:hover, .form-btn:hover {
+    box-shadow: 0 0 40px 40px var(--orange) inset;
+    background-color: var(--orange);
+
+    color: var(--white);
+}
+
+.delete-btn {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.delete-btn:hover {
+    box-shadow: 0 0 40px 40px var(--red) inset;
+    background-color: var(--red);
+
+    color: var(--white);
+}
+
+.profile__forms {
+    flex-grow: 1;
+
+    background: var(--black-2f);
+
+    border-radius: 15px;
+
+    padding: 32px;
+}
+
+.profile__form {
+    width: 100%;
+
+    display: flex;
+
+    margin-bottom: 16px;
+}
+
+.profile__form:last-child {
+    margin-bottom: 0; 
+}
+
+.profile__input {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    
+    border-radius: 8px;
+    border: none;
+
+    outline: none;
+
+    padding: 8px 8px 8px 16px;
+}
+
